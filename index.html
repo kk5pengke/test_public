@@ -45,128 +45,27 @@
             font-size: 1.1em;
         }
 
-        .comparison-container {
+        .image-container {
             position: relative;
-            width: 100%;
-            max-width: 900px;
+            width: 50%;
+            max-width: 450px;
             margin: 0 auto;
             overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            cursor: col-resize;
-            user-select: none;
         }
 
-        .comparison-image {
-            position: relative;
+        .image-display {
             width: 100%;
-            padding-bottom: 66.67%; /* 3:2 比例，可以根据图片调整 */
+            height: auto;
+            display: block;
         }
 
-        .image-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .image-display img {
             width: 100%;
-            height: 100%;
-        }
-
-        .image-before,
-        .image-after {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .image-before {
-            z-index: 1;
-        }
-
-        .image-after {
-            z-index: 2;
-            clip-path: inset(0 0 0 50%);
-        }
-
-        .slider {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 4px;
-            height: 100%;
-            background: white;
-            z-index: 3;
-            transform: translateX(-50%);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .slider-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 60px;
-            height: 60px;
-            background: white;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-
-        .slider-button:hover {
-            transform: translate(-50%, -50%) scale(1.1);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        .slider-button::before,
-        .slider-button::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-style: solid;
-        }
-
-        .slider-button::before {
-            left: 18px;
-            border-width: 8px 10px 8px 0;
-            border-color: transparent #667eea transparent transparent;
-        }
-
-        .slider-button::after {
-            right: 18px;
-            border-width: 8px 0 8px 10px;
-            border-color: transparent transparent transparent #667eea;
-        }
-
-        .labels {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            padding: 0 20px;
-        }
-
-        .label {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #333;
-            padding: 10px 20px;
-            border-radius: 8px;
-            background: #f5f5f5;
-        }
-
-        .label-before {
-            color: #e74c3c;
-        }
-
-        .label-after {
-            color: #27ae60;
+            height: auto;
+            display: block;
+            border-radius: 12px;
         }
 
         .instructions {
@@ -179,75 +78,6 @@
             border-radius: 8px;
         }
 
-        .upload-section {
-            margin-top: 40px;
-            padding: 30px;
-            background: #f9f9f9;
-            border-radius: 12px;
-        }
-
-        .upload-title {
-            text-align: center;
-            font-size: 1.3em;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .upload-controls {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .upload-box {
-            flex: 1;
-            min-width: 250px;
-            padding: 20px;
-            background: white;
-            border: 2px dashed #ddd;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .upload-box:hover {
-            border-color: #667eea;
-            background: #f8f9ff;
-        }
-
-        .upload-box label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: #555;
-        }
-
-        .upload-box input[type="file"] {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 0.9em;
-            cursor: pointer;
-            
-        }
-
-        .upload-box input[type="file"]::-webkit-file-upload-button {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .upload-box input[type="file"]::-webkit-file-upload-button:hover {
-            background: #5568d3;
-        }
 
         /* 帧选择器样式 */
         .frame-selector {
@@ -256,33 +86,6 @@
             background: linear-gradient(135deg, #667eea15, #764ba215);
             border-radius: 12px;
             border: 2px solid #667eea30;
-        }
-
-        .frame-selector-title {
-            text-align: center;
-            font-size: 1.3em;
-            color: #333;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
-
-        .frame-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 0 10px;
-        }
-
-        .frame-current {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #667eea;
-        }
-
-        .frame-total {
-            font-size: 1.1em;
-            color: #666;
         }
 
         .frame-slider-container {
@@ -344,53 +147,11 @@
         .frame-markers {
             display: flex;
             justify-content: space-between;
-            margin-top: 10px;
+            margin-top: 15px;
             padding: 0 5px;
-            font-size: 0.85em;
-            color: #999;
-        }
-
-        .playback-controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .playback-btn {
-            padding: 12px 24px;
             font-size: 1em;
+            color: #666;
             font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .play-btn {
-            background: #667eea;
-            color: white;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-        }
-
-        .play-btn:hover {
-            background: #5568d3;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
-        }
-
-        .reset-btn {
-            background: #f5f5f5;
-            color: #333;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .reset-btn:hover {
-            background: #e0e0e0;
-            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -417,82 +178,29 @@
         <h1>🎬 图片序列查看器</h1>
         <p class="subtitle">通过滑块浏览连续图片帧</p>
 
-        <div class="comparison-container" id="comparisonContainer">
-            <div class="comparison-image">
-                <div class="image-wrapper">
-                    <div class="image-before" id="imageBefore"></div>
-                    <div class="image-after" id="imageAfter"></div>
-                </div>
-                <div class="slider" id="slider">
-                    <div class="slider-button"></div>
-                </div>
+        <div class="image-container">
+            <div class="image-display">
+                <img id="currentImage" src="" alt="当前帧">
             </div>
         </div>
 
-        <div class="labels">
-            <div class="label label-before">← 当前帧</div>
-            <div class="label label-after">当前帧 →</div>
-        </div>
-
         <div class="instructions">
-            💡 提示：使用下方的帧选择器浏览图片序列。你也可以使用键盘方向键 ← → 切换帧，空格键播放/暂停
+            💡 提示：拖动下方滑块浏览图片序列
         </div>
 
         <!-- 帧选择器 -->
         <div class="frame-selector">
-            <div class="frame-selector-title">🎬 图片序列浏览器</div>
-            <div class="frame-info">
-                <div>
-                    <span style="color: #999;">当前帧：</span>
-                    <span class="frame-current" id="currentFrame">1</span>
-                </div>
-                <div class="frame-total">
-                    共 <span id="totalFrames">34</span> 帧
-                </div>
-            </div>
             <div class="frame-slider-container">
-                <input type="range" class="frame-slider" id="frameSlider" min="0" max="33" value="0" step="1">
+                <input type="range" class="frame-slider" id="frameSlider" min="0" max="1000" value="0" step="1">
             </div>
             <div class="frame-markers">
-                <span>第一帧</span>
-                <span>最后一帧</span>
-            </div>
-            <div class="playback-controls">
-                <button class="playback-btn play-btn" id="playBtn">
-                    <span id="playIcon">▶</span>
-                    <span id="playText">播放</span>
-                </button>
-                <button class="playback-btn reset-btn" id="resetBtn">
-                    ↻ 重置
-                </button>
-            </div>
-        </div>
-
-        <div class="upload-section">
-            <div class="upload-title">上传你的图片</div>
-            <div class="upload-controls">
-                <div class="upload-box">
-                    <label for="uploadBefore">图片 1（左侧/底层）</label>
-                    <input type="file" id="uploadBefore" accept="image/*">
-                </div>
-                <div class="upload-box">
-                    <label for="uploadAfter">图片 2（右侧/顶层）</label>
-                    <input type="file" id="uploadAfter" accept="image/*">
-                </div>
+                <span>0</span>
+                <span>1</span>
             </div>
         </div>
     </div>
 
     <script>
-        const comparisonContainer = document.getElementById('comparisonContainer');
-        const slider = document.getElementById('slider');
-        const imageAfter = document.getElementById('imageAfter');
-        const imageBefore = document.getElementById('imageBefore');
-        const uploadBefore = document.getElementById('uploadBefore');
-        const uploadAfter = document.getElementById('uploadAfter');
-
-        let isDragging = false;
-
         // 图片序列配置
         const imageSequence = [];
         const startFrame = 915;
@@ -501,214 +209,43 @@
 
         // 生成图片序列数组
         for (let i = startFrame; i <= endFrame; i++) {
-            const frameNumber = String(i).padStart(5, '0');
             imageSequence.push(`continues_data/00${i}.png`);
         }
 
-        // 帧选择器元素
+        // 获取元素
+        const currentImage = document.getElementById('currentImage');
         const frameSlider = document.getElementById('frameSlider');
-        const currentFrameDisplay = document.getElementById('currentFrame');
-        const totalFramesDisplay = document.getElementById('totalFrames');
-        const playBtn = document.getElementById('playBtn');
-        const playIcon = document.getElementById('playIcon');
-        const playText = document.getElementById('playText');
-        const resetBtn = document.getElementById('resetBtn');
+        
+        const sliderMax = 1000; // 滑块最大值
 
-        // 播放控制
-        let isPlaying = false;
-        let playInterval = null;
-        let currentFrameIndex = 0;
-
-        // 更新总帧数显示
-        totalFramesDisplay.textContent = totalFrames;
-        frameSlider.max = totalFrames - 1;
-
-        // 设置默认图片（第一帧）
-        function updateFrame(frameIndex) {
-            if (frameIndex >= 0 && frameIndex < imageSequence.length) {
-                currentFrameIndex = frameIndex;
-                imageBefore.style.backgroundImage = `url('${imageSequence[frameIndex]}')`;
-                imageAfter.style.backgroundImage = `url('${imageSequence[frameIndex]}')`;
-                currentFrameDisplay.textContent = frameIndex + 1;
-                frameSlider.value = frameIndex;
-            }
+        // 根据滑块值（0-1000）更新图片，显示标签为 0-1
+        function updateImageFromSlider(sliderValue) {
+            // 将 0-1000 的值归一化到 0-1
+            const normalizedValue = sliderValue / sliderMax;
+            
+            // 将 0-1 的值映射到图片索引 (0 到 totalFrames-1)
+            const frameIndex = Math.round(normalizedValue * (totalFrames - 1));
+            const clampedIndex = Math.max(0, Math.min(frameIndex, totalFrames - 1));
+            
+            // 更新图片
+            currentImage.src = imageSequence[clampedIndex];
         }
+
+        // 滑块事件 - 使用 input 事件实现实时响应
+        frameSlider.addEventListener('input', (e) => {
+            const sliderValue = parseInt(e.target.value);
+            updateImageFromSlider(sliderValue);
+        });
 
         // 初始化第一帧
-        updateFrame(0);
-
-        function updateSliderPosition(x) {
-            const containerRect = comparisonContainer.getBoundingClientRect();
-            const containerWidth = containerRect.width;
-            let position = x - containerRect.left;
-
-            // 限制滑块位置在容器范围内
-            position = Math.max(0, Math.min(position, containerWidth));
-
-            const percentage = (position / containerWidth) * 100;
-
-            slider.style.left = percentage + '%';
-            imageAfter.style.clipPath = `inset(0 0 0 ${percentage}%)`;
-        }
-
-        // 鼠标事件
-        comparisonContainer.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            updateSliderPosition(e.clientX);
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                updateSliderPosition(e.clientX);
-            }
-        });
-
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-
-        // 触摸事件（移动端支持）
-        comparisonContainer.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            updateSliderPosition(e.touches[0].clientX);
-        });
-
-        document.addEventListener('touchmove', (e) => {
-            if (isDragging) {
-                updateSliderPosition(e.touches[0].clientX);
-            }
-        });
-
-        document.addEventListener('touchend', () => {
-            isDragging = false;
-        });
-
-        // 点击直接定位
-        comparisonContainer.addEventListener('click', (e) => {
-            updateSliderPosition(e.clientX);
-        });
-
-        // 图片上传处理
-        uploadBefore.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    imageBefore.style.backgroundImage = `url('${event.target.result}')`;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        uploadAfter.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    imageAfter.style.backgroundImage = `url('${event.target.result}')`;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // 防止拖拽时选中文本
-        comparisonContainer.addEventListener('selectstart', (e) => {
-            e.preventDefault();
-        });
-
-        // 帧选择器滑块事件
-        frameSlider.addEventListener('input', (e) => {
-            const frameIndex = parseInt(e.target.value);
-            updateFrame(frameIndex);
-            
-            // 如果正在播放，停止播放
-            if (isPlaying) {
-                stopPlayback();
-            }
-        });
-
-        // 播放/暂停按钮
-        playBtn.addEventListener('click', () => {
-            if (isPlaying) {
-                stopPlayback();
-            } else {
-                startPlayback();
-            }
-        });
-
-        // 重置按钮
-        resetBtn.addEventListener('click', () => {
-            stopPlayback();
-            updateFrame(0);
-        });
-
-        // 开始播放
-        function startPlayback() {
-            isPlaying = true;
-            playIcon.textContent = '⏸';
-            playText.textContent = '暂停';
-            
-            playInterval = setInterval(() => {
-                let nextFrame = currentFrameIndex + 1;
-                
-                // 循环播放
-                if (nextFrame >= totalFrames) {
-                    nextFrame = 0;
-                }
-                
-                updateFrame(nextFrame);
-            }, 100); // 每100毫秒切换一帧，约10fps
-        }
-
-        // 停止播放
-        function stopPlayback() {
-            isPlaying = false;
-            playIcon.textContent = '▶';
-            playText.textContent = '播放';
-            
-            if (playInterval) {
-                clearInterval(playInterval);
-                playInterval = null;
-            }
-        }
-
-        // 键盘快捷键
-        document.addEventListener('keydown', (e) => {
-            switch(e.key) {
-                case 'ArrowLeft':
-                    // 上一帧
-                    if (currentFrameIndex > 0) {
-                        updateFrame(currentFrameIndex - 1);
-                        stopPlayback();
-                    }
-                    break;
-                case 'ArrowRight':
-                    // 下一帧
-                    if (currentFrameIndex < totalFrames - 1) {
-                        updateFrame(currentFrameIndex + 1);
-                        stopPlayback();
-                    }
-                    break;
-                case ' ':
-                    // 空格键播放/暂停
-                    e.preventDefault();
-                    if (isPlaying) {
-                        stopPlayback();
-                    } else {
-                        startPlayback();
-                    }
-                    break;
-                case 'Home':
-                    // Home键回到第一帧
-                    updateFrame(0);
-                    stopPlayback();
-                    break;
-                case 'End':
-                    // End键到最后一帧
-                    updateFrame(totalFrames - 1);
-                    stopPlayback();
-                    break;
-            }
+        updateImageFromSlider(0);
+        
+        // 预加载所有图片以提高流畅度
+        const preloadedImages = [];
+        imageSequence.forEach((src, index) => {
+            const img = new Image();
+            img.src = src;
+            preloadedImages[index] = img;
         });
     </script>
 </body>

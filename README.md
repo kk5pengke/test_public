@@ -21,27 +21,31 @@
 
 ### 本地预览（推荐）
 
-**方式1：使用 Python（推荐）**
+**方式1：使用启动脚本（最简单）**
+
 ```bash
-# 在项目目录下运行
+# macOS/Linux
+./start.sh
+
+# Windows
+start.bat
+```
+
+然后在浏览器中访问 http://localhost:8000
+
+**方式2：手动启动服务器**
+
+使用 Python（推荐）：
+```bash
 python3 -m http.server 8000
-
-# 然后在浏览器中访问
-# http://localhost:8000
 ```
 
-**方式2：使用 Node.js**
+使用 Node.js：
 ```bash
-# 安装 http-server（仅需一次）
-npm install -g http-server
-
-# 在项目目录下运行
-http-server
-
-# 然后在浏览器中访问提示的地址
+npx http-server
 ```
 
-**方式3：使用 PHP**
+使用 PHP：
 ```bash
 php -S localhost:8000
 ```
