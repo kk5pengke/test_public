@@ -1,11 +1,13 @@
-# 图片对比滑块项目
+# 图片序列查看器项目
 
-一个类似于 [VideoGigaGAN](https://videogigagan.github.io/) 的图片对比滑块网页，可以通过左右拖动滑块来比较两张图片的差异。
+一个类似于 [VideoGigaGAN](https://videogigagan.github.io/) 的图片序列查看器，可以通过拖动滑块浏览连续的图片帧。
 
 ## 功能特性
 
-✨ **交互式滑块** - 流畅的拖动体验，实时查看两张图片的对比  
-🖱️ **多种交互方式** - 支持拖动滑块、点击定位  
+🎬 **图片序列浏览** - 通过滑块依次查看 continues_data 文件夹中的所有图片  
+▶️ **自动播放** - 支持自动循环播放图片序列  
+⌨️ **键盘快捷键** - 方向键切换帧，空格键播放/暂停  
+🖱️ **多种交互方式** - 支持拖动滑块、点击定位、键盘控制  
 📱 **移动端支持** - 完美支持触摸设备  
 🎨 **现代化UI** - 精美的渐变背景和动画效果  
 📤 **图片上传** - 可以上传自己的图片进行对比  
@@ -13,9 +15,36 @@
 
 ## 使用方法
 
-### 在线预览
+### ⚠️ 重要提示
 
-直接在浏览器中打开 `index.html` 文件即可使用。
+由于浏览器的安全限制，**不能直接双击打开 `index.html` 文件**，因为本地图片可能无法加载。必须通过 HTTP 服务器来访问。
+
+### 本地预览（推荐）
+
+**方式1：使用 Python（推荐）**
+```bash
+# 在项目目录下运行
+python3 -m http.server 8000
+
+# 然后在浏览器中访问
+# http://localhost:8000
+```
+
+**方式2：使用 Node.js**
+```bash
+# 安装 http-server（仅需一次）
+npm install -g http-server
+
+# 在项目目录下运行
+http-server
+
+# 然后在浏览器中访问提示的地址
+```
+
+**方式3：使用 PHP**
+```bash
+php -S localhost:8000
+```
 
 ### 部署到 GitHub Pages
 
@@ -24,40 +53,35 @@
 3. 选择主分支（main）作为源
 4. 访问 `https://你的用户名.github.io/仓库名/` 即可在线查看
 
-### 本地使用
+## 功能说明
 
-```bash
-# 方式1: 直接双击 index.html 在浏览器中打开
+### 🎬 图片序列浏览
 
-# 方式2: 使用简单的 HTTP 服务器
-python -m http.server 8000
-# 然后访问 http://localhost:8000
+项目会自动加载 `continues_data` 文件夹中的所有图片（00915.png - 00948.png），共 34 帧。
 
-# 或者使用 Node.js
-npx http-server
-```
+**操作方式：**
+- 🖱️ **拖动滑块** - 拖动帧选择滑块来浏览不同的图片
+- ⌨️ **键盘快捷键**：
+  - `←` / `→` - 上一帧 / 下一帧
+  - `Space` - 播放 / 暂停
+  - `Home` - 跳到第一帧
+  - `End` - 跳到最后一帧
+- ▶️ **播放按钮** - 自动循环播放所有帧（10fps）
+- ↻ **重置按钮** - 返回第一帧
 
-## 如何添加你的图片
+### 📤 自定义图片序列
 
-### 方法1: 通过网页上传
+如果你想使用自己的图片序列：
 
-直接在网页底部的上传区域选择你的两张图片即可。
-
-### 方法2: 替换代码中的图片URL
-
-编辑 `index.html` 文件，找到以下代码（大约在第 235-236 行）：
-
-```javascript
-imageBefore.style.backgroundImage = "url('你的图片1路径')";
-imageAfter.style.backgroundImage = "url('你的图片2路径')";
-```
-
-将图片放在项目目录中，例如创建 `images` 文件夹：
+1. 将连续编号的图片放在 `continues_data` 文件夹中
+2. 编辑 `index.html` 中的配置（约第 498-500 行）：
 
 ```javascript
-imageBefore.style.backgroundImage = "url('images/before.jpg')";
-imageAfter.style.backgroundImage = "url('images/after.jpg')";
+const startFrame = 915;  // 起始帧号
+const endFrame = 948;    // 结束帧号
 ```
+
+3. 确保图片命名格式为 `00XXX.png`（5位数字）
 
 ## 技术实现
 
