@@ -232,6 +232,7 @@
             border-radius: 6px;
             font-size: 0.9em;
             cursor: pointer;
+            
         }
 
         .upload-box input[type="file"]::-webkit-file-upload-button {
@@ -318,9 +319,9 @@
 
         let isDragging = false;
 
-        // 设置默认示例图片（使用占位图）
-        imageBefore.style.backgroundImage = "url('https://via.placeholder.com/900x600/FF6B6B/FFFFFF?text=图片+1')";
-        imageAfter.style.backgroundImage = "url('https://via.placeholder.com/900x600/4ECDC4/FFFFFF?text=图片+2')";
+        // 设置默认图片
+        imageBefore.style.backgroundImage = "url('datas/00694.png')";
+        imageAfter.style.backgroundImage = "url('datas/00946.png')";
 
         function updateSliderPosition(x) {
             const containerRect = comparisonContainer.getBoundingClientRect();
